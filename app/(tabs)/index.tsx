@@ -1,10 +1,11 @@
 import { StyleSheet } from "react-native";
 
 import { Text, View } from "@/components/Themed";
+import tw from "@/tailwind";
 
 export default function HomeScreen() {
   return (
-    <View style={styles.container}>
+    <View style={[tw`bg-green-500`, styles.container]}>
       <Text style={styles.title}>Home Screen</Text>
     </View>
   );
