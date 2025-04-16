@@ -1,20 +1,22 @@
 import { Tabs } from "expo-router";
 import React from "react";
 
-import { useColorScheme } from "@/components/useColorScheme";
-import Colors from "@/constants/Colors";
+import tw from "@/tailwind";
 import { Ionicons } from "@expo/vector-icons";
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? "light"].tint,
+        tabBarActiveTintColor: tw.color("gray-50"),
         // Disable the static render of the header on web
         // to prevent a hydration error in React Navigation v6.
         headerShown: false,
+        tabBarStyle: {
+          backgroundColor: tw.color("black"),
+          borderTopWidth: 1,
+          borderTopColor: tw.color("gray-200"),
+        },
       }}
     >
       <Tabs.Screen
